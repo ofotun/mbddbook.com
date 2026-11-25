@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found | MbDD</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="That page could not be found on the MbDD book site."
+    />
+    <link rel="canonical" href="https://mbddbook.com/" />
+    <style>
+      :root {
+        --ink: #16181c;
+        --ink-soft: #3a3f47;
+        --muted: #6b7280;
+        --line: #d8dde3;
+        --accent: #2f5f6b;
+        --accent-hover: #254c56;
+        --font-display: "Iowan Old Style", Georgia, "Times New Roman", serif;
+        --font-body: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse 90% 55% at 8% -10%, rgba(47, 95, 107, 0.09), transparent 55%),
+          linear-gradient(180deg, #f7f8fa 0%, #eef1f4 50%, #e4e9ef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      main {
+        width: min(100%, 36rem);
+      }
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 0.85rem;
+      }
+      h1 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        line-height: 1.1;
+        margin: 0 0 0.75rem;
+      }
+      p {
+        color: var(--ink-soft);
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin: 0 0 1.5rem;
+      }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.35rem;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.3rem;
+        font-weight: 500;
+      }
+      .cta:hover {
+        background: var(--accent-hover);
+      }
+      .cta:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <p class="eyebrow">404</p>
+      <h1>Page not found</h1>
+      <p>
+        That address is not part of the MbDD site. The book overview is a good
+        place to continue.
+      </p>
+      <a class="cta" data-home href="/">Back to overview</a>
+    </main>
+    <script>
+      (function () {
+        var parts = location.pathname.split("/").filter(Boolean);
+        var home = parts[0] === "mbddbook.com" ? "/mbddbook.com/" : "/";
+        document.querySelectorAll("[data-home]").forEach(function (el) {
+          el.setAttribute("href", home);
+        });
+      })();
+    </script>
+  </body>
+</html>
